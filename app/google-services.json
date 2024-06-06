@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "698713142030",
+    "project_id": "das-robledo",
+    "storage_bucket": "das-robledo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698713142030:android:3a06f545de6b3ede099d5f",
+        "android_client_info": {
+          "package_name": "com.example.entrega1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjMZYnQttIhf4uO8YqcIAZVlTtHkNPdgU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698713142030:android:d3795d55a13e109c099d5f",
+        "android_client_info": {
+          "package_name": "com.example.entrega2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjMZYnQttIhf4uO8YqcIAZVlTtHkNPdgU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698713142030:android:e3a1603e3127e1a2099d5f",
+        "android_client_info": {
+          "package_name": "com.example.extraordinariadas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjMZYnQttIhf4uO8YqcIAZVlTtHkNPdgU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
