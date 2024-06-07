@@ -17,6 +17,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.json.JSONObject
 import java.io.ByteArrayOutputStream
 import java.io.OutputStreamWriter
 import java.net.HttpURLConnection
@@ -62,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun uploadImageToServer(bitmap: Bitmap) {
         val baos = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos)
         val byteArray = baos.toByteArray()
         val encodedImage = Base64.encodeToString(byteArray, Base64.DEFAULT)
 
@@ -72,8 +73,13 @@ class MainActivity : AppCompatActivity() {
                 val connection = url.openConnection() as HttpURLConnection
                 connection.requestMethod = "POST"
                 connection.doOutput = true
+                connection.setRequestProperty("Content-Type", "application/json")
+
+                val json = JSONObject()
+                json.put("image", encodedImage)
+
                 val writer = OutputStreamWriter(connection.outputStream)
-                writer.write("image=$encodedImage")
+                writer.write(json.toString())
                 writer.flush()
                 writer.close()
 
