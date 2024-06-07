@@ -1,45 +1,23 @@
 package com.example.extraordinariadas
 
-
 import android.app.Activity
-import android.annotation.SuppressLint
-import android.app.AlarmManager
-import android.app.PendingIntent
-import android.content.ContentValues
-import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Base64
 import android.util.Log
 import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
-import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.messaging.FirebaseMessaging
-import org.json.JSONArray
-import java.io.BufferedReader
-import java.io.ByteArrayOutputStream
-import java.io.InputStreamReader
-import java.text.SimpleDateFormat
-import java.util.Calendar
-import java.util.Date
-import java.util.Locale
-import com.google.firebase.FirebaseApp
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.io.ByteArrayOutputStream
 import java.io.OutputStreamWriter
 import java.net.HttpURLConnection
 import java.net.URL
@@ -48,7 +26,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -65,10 +42,7 @@ class MainActivity : AppCompatActivity() {
         // Initialize FCM
         FirebaseMessaging.getInstance().subscribeToTopic("news")
             .addOnCompleteListener { task ->
-                var msg = "Subscribed"
-                if (!task.isSuccessful) {
-                    msg = "Subscription failed"
-                }
+                val msg = if (task.isSuccessful) "Subscribed" else "Subscription failed"
                 Log.d(TAG, msg)
             }
     }
@@ -94,7 +68,7 @@ class MainActivity : AppCompatActivity() {
 
         GlobalScope.launch(Dispatchers.IO) {
             try {
-                val url = URL("http://34.79.198.122/upload.php")
+                val url = URL("http://34.77.62.119/upload.php")
                 val connection = url.openConnection() as HttpURLConnection
                 connection.requestMethod = "POST"
                 connection.doOutput = true

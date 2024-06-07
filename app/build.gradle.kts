@@ -49,6 +49,9 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore-ktx:24.11.1")
     implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
     implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.github.bumptech.glide:glide:4.12.0")
+    implementation("com.squareup.okhttp3:okhttp:4.+")
+
 
     // Añadir la dependencia de FCM
     implementation("com.google.firebase:firebase-messaging:23.4.1")
