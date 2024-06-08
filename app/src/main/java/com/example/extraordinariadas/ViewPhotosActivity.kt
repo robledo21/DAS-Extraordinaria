@@ -22,6 +22,7 @@ class ViewPhotosActivity : AppCompatActivity() {
     private lateinit var imageView: ImageView
     private lateinit var nextButton: Button
     private lateinit var prevButton: Button
+    private lateinit var backButton: Button
 
     private var photoUrls: MutableList<String> = mutableListOf()
     private var currentIndex = 0
@@ -33,6 +34,7 @@ class ViewPhotosActivity : AppCompatActivity() {
         imageView = findViewById(R.id.imageView)
         prevButton = findViewById(R.id.prevButton)
         nextButton = findViewById(R.id.nextButton)
+        backButton = findViewById<Button>(R.id.backButton)
 
         fetchPhotos()
 
@@ -48,6 +50,10 @@ class ViewPhotosActivity : AppCompatActivity() {
                 currentIndex--
                 displayPhoto()
             }
+        }
+
+        backButton.setOnClickListener {
+            finish()
         }
     }
 

@@ -32,8 +32,6 @@ import java.net.URL
 class MainActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
-    private lateinit var photoGridView: GridView
-    private lateinit var photoAdapter: PhotoAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -87,7 +85,7 @@ class MainActivity : AppCompatActivity() {
         FirebaseMessaging.getInstance().token.addOnSuccessListener { token ->
             GlobalScope.launch(Dispatchers.IO) {
                 try {
-                    val url = URL("http://34.76.16.111/upload3.php")
+                    val url = URL("http://35.195.17.43/upload3.php")
                     val connection = url.openConnection() as HttpURLConnection
                     connection.requestMethod = "POST"
                     connection.doOutput = true
@@ -127,42 +125,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
-    private fun fetchPhotos() {
-        GlobalScope.launch(Dispatchers.IO) {
-            try {
-                val url = URL("http://34.76.16.111/get_images.php")
-                val connection = url.openConnection() as HttpURLConnection
-                connection.requestMethod = "GET"
-
-                val inputStreamReader = InputStreamReader(connection.inputStream)
-                val bufferedReader = BufferedReader(inputStreamReader)
-                val response = StringBuilder()
-                var inputLine: String?
-
-                while (bufferedReader.readLine().also { inputLine = it } != null) {
-                    response.append(inputLine)
-                }
-                bufferedReader.close()
-
-                // Parse the JSON response
-                val jsonArray = JSONArray(response.toString())
-                val photoUrls = mutableListOf<String>()
-                for (i in 0 until jsonArray.length()) {
-                    val imageUrl = jsonArray.getString(i)
-                    photoUrls.add(imageUrl)
-                }
-
-                // Update GridView with fetched photo URLs
-                runOnUiThread {
-                    photoAdapter.updateData(photoUrls)
-                }
-
-            } catch (e: Exception) {
-                Log.e(TAG, "Error fetching photos: ${e.message}")
-            }
-        }
-    }
 
     private fun checkNotificationPermission() {
         if (!NotificationManagerCompat.from(this).areNotificationsEnabled()) {

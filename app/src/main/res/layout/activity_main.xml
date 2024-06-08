@@ -7,35 +7,46 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
+    <!-- Título de la actividad -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenido al Museo de Arte"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="32dp" />
+
     <!-- Botón para capturar fotos -->
     <Button
         android:id="@+id/captureButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Capture Photo" />
+        android:text="Capturar Foto"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_marginBottom="16dp" />
 
     <!-- Botón para ver fotos -->
     <Button
         android:id="@+id/viewPhotosButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="View Photos" />
+        android:text="Ver Fotos"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_marginBottom="16dp" />
 
-    <!-- Espacio entre botones y GridView -->
-    <View
+    <!-- ImageView para mostrar la imagen -->
+    <ImageView
+        android:id="@+id/museumImage"
         android:layout_width="match_parent"
-        android:layout_height="16dp" />
-
-    <!-- GridView para mostrar las imágenes -->
-    <GridView
-        android:id="@+id/photoGridView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:numColumns="3"
-        android:verticalSpacing="8dp"
-        android:horizontalSpacing="8dp"
-        android:stretchMode="columnWidth"
-        android:gravity="center" />
+        android:layout_height="wrap_content"
+        android:src="@drawable/gugen"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="16dp" />
 
 </LinearLayout>

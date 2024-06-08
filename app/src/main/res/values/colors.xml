@@ -2,4 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#CC8D6F</color> <!-- Beige claro -->
+    <color name="colorPrimaryDark">#775646</color> <!-- Gris oscuro -->
+    <color name="colorAccent">#3D5A80</color> <!-- Azul oscuro -->
+    <color name="textColor">#3D5A80</color>
+    <color name="colorsuave">#EFD5C8</color>
 </resources>

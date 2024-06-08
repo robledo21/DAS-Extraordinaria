@@ -1,35 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp">
 
+    <!-- Campo de texto para el correo electrónico -->
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:hint="Email"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:background="@color/colorsuave"
+        android:padding="12dp"
+        android:textColor="@color/black" />
 
+    <!-- Campo de texto para la contraseña -->
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextEmail"
-        android:hint="Password"
-        android:inputType="textPassword" />
+        android:layout_marginBottom="16dp"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:background="@color/colorsuave"
+        android:padding="12dp"
+        android:textColor="@color/black" />
 
+    <!-- Botón de registro -->
     <Button
         android:id="@+id/btnRegistro"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextPassword"
-        android:text="Registro" />
+        android:layout_marginBottom="16dp"
+        android:text="Registro"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:textAllCaps="false" />
 
+    <!-- Botón de inicio de sesión -->
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/btnRegistro"
-        android:text="Login" />
+        android:text="Iniciar Sesión"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:textAllCaps="false" />
+
+    <!-- ImageView para mostrar la foto -->
+    <ImageView
+        android:id="@+id/photoImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnLogin"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/gugen"
+        android:scaleType="centerCrop" />
 
 </RelativeLayout>
