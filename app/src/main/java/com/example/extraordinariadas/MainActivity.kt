@@ -43,10 +43,6 @@ class MainActivity : AppCompatActivity() {
         FirebaseApp.initializeApp(this)
         auth = FirebaseAuth.getInstance()
 
-        photoGridView = findViewById(R.id.photoGridView)
-        photoAdapter = PhotoAdapter(this,ArrayList())
-        photoGridView.adapter = photoAdapter
-
         checkNotificationPermission()
 
         // Capture image
@@ -56,7 +52,8 @@ class MainActivity : AppCompatActivity() {
 
         // View photos
         findViewById<Button>(R.id.viewPhotosButton).setOnClickListener {
-            fetchPhotos()
+            val intent = Intent(this, ViewPhotosActivity::class.java)
+            startActivity(intent)
         }
 
         // Initialize FCM
