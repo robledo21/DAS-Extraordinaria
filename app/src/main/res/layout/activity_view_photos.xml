@@ -1,37 +1,49 @@
-<!-- activity_view_photos.xml -->
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:padding="16dp">
+    android:gravity="center">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_gravity="center"
-        android:scaleType="fitCenter"
-        android:background="@drawable/marco_decorativo" />
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="65dp"
+            android:layout_width="220dp"
+            android:layout_height="270dp"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:id="@+id/frameView"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/marco_decorativo" />
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="16dp">
+        android:gravity="center">
 
         <Button
             android:id="@+id/prevButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Anterior" />
+            android:text="Previous"/>
 
         <Button
             android:id="@+id/nextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Siguiente"
-            android:layout_marginStart="16dp" />
+            android:text="Next"/>
     </LinearLayout>
+
 </LinearLayout>

@@ -31,8 +31,8 @@ class ViewPhotosActivity : AppCompatActivity() {
         setContentView(R.layout.activity_view_photos)
 
         imageView = findViewById(R.id.imageView)
-        nextButton = findViewById(R.id.nextButton)
         prevButton = findViewById(R.id.prevButton)
+        nextButton = findViewById(R.id.nextButton)
 
         fetchPhotos()
 
