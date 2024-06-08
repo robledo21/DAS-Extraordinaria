@@ -1,30 +1,48 @@
+// PhotoAdapter.kt
 package com.example.extraordinariadas
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import com.squareup.picasso.Picasso
+import android.content.Context
+import android.widget.BaseAdapter
 
-class PhotoAdapter(private var photoUrls: List<String>) :
-    RecyclerView.Adapter<PhotoAdapter.PhotoViewHolder>() {
+class PhotoAdapter(private val context: Context, private var photoUrls: List<String>) : BaseAdapter() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotoViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.photo_item_layout, parent, false)
-        return PhotoViewHolder(view)
-    }
-
-    override fun onBindViewHolder(holder: PhotoViewHolder, position: Int) {
-        val imageUrl = photoUrls[position]
-        Glide.with(holder.itemView.context)
-            .load(imageUrl)
-            .into(holder.imageView)
-    }
-
-    override fun getItemCount(): Int {
+    override fun getCount(): Int {
         return photoUrls.size
+    }
+
+    override fun getItem(position: Int): Any {
+        return photoUrls[position]
+    }
+
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
+    }
+
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+        val view: View
+        val viewHolder: ViewHolder
+
+        if (convertView == null) {
+            view = LayoutInflater.from(context).inflate(R.layout.grid_item_photo, parent, false)
+            viewHolder = ViewHolder(view)
+            view.tag = viewHolder
+        } else {
+            view = convertView
+            viewHolder = view.tag as ViewHolder
+        }
+
+        // Load image into ImageView using Picasso
+        Picasso.get().load(photoUrls[position]).into(viewHolder.imageView)
+
+        return view
     }
 
     fun updateData(newPhotoUrls: List<String>) {
@@ -32,7 +50,7 @@ class PhotoAdapter(private var photoUrls: List<String>) :
         notifyDataSetChanged()
     }
 
-    class PhotoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imageView: ImageView = itemView.findViewById(R.id.imageView)
+    private class ViewHolder(view: View) {
+        val imageView: ImageView = view.findViewById(R.id.imageView)
     }
 }

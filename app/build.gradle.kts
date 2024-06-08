@@ -51,6 +51,7 @@ dependencies {
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.github.bumptech.glide:glide:4.12.0")
     implementation("com.squareup.okhttp3:okhttp:4.+")
+    implementation ("com.squareup.picasso:picasso:2.71828")
 
 
     // Añadir la dependencia de FCM
