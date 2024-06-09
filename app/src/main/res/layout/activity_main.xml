@@ -14,7 +14,7 @@
         android:text="Bienvenido al Museo de Arte"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="?android:textColorPrimary"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="32dp" />
 
@@ -24,8 +24,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Capturar Foto"
-        android:background="@color/colorAccent"
-        android:textColor="@color/white"
+        android:background="?attr/colorAccent"
+        android:textColor="?attr/colorOnSecondary"
         android:textSize="20sp"
         android:layout_marginBottom="16dp" />
 
@@ -35,8 +35,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Ver Fotos"
-        android:background="@color/colorAccent"
-        android:textColor="@color/white"
+        android:background="?attr/colorAccent"
+        android:textColor="?attr/colorOnSecondary"
         android:textSize="20sp"
         android:layout_marginBottom="16dp" />
 

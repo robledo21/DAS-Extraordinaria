@@ -11,7 +11,7 @@
         android:layout_marginBottom="16dp"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:background="@color/colorsuave"
+        android:background="?attr/colorOnTertiary"
         android:padding="12dp"
         android:textColor="@color/black" />
 
@@ -24,7 +24,7 @@
         android:layout_marginBottom="16dp"
         android:hint="Contraseña"
         android:inputType="textPassword"
-        android:background="@color/colorsuave"
+        android:background="?attr/colorOnTertiary"
         android:padding="12dp"
         android:textColor="@color/black" />
 
@@ -36,7 +36,7 @@
         android:layout_below="@id/editTextPassword"
         android:layout_marginBottom="16dp"
         android:text="Registro"
-        android:background="@color/colorAccent"
+        android:background="?attr/colorAccent"
         android:textColor="@color/white"
         android:textAllCaps="false" />
 
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/btnRegistro"
         android:text="Iniciar Sesión"
-        android:background="@color/colorAccent"
+        android:background="?attr/colorAccent"
         android:textColor="@color/white"
         android:textAllCaps="false" />
 

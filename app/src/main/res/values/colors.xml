@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="colorPrimary">#CC8D6F</color> <!-- Beige claro -->
-    <color name="colorPrimaryDark">#775646</color> <!-- Gris oscuro -->
-    <color name="colorAccent">#3D5A80</color> <!-- Azul oscuro -->
-    <color name="textColor">#3D5A80</color>
-    <color name="colorsuave">#EFD5C8</color>
+<color name="colorPrimary">#CC8D6F</color>
+<color name="colorPrimaryDark">#775646</color>
+<color name="colorAccent">#3D5A80</color>
+    <color name="colorSuave">#E4C8BB</color>
+    <color name="colorSuaveDark">#9BBBE4</color>
+<color name="white">#FFFFFF</color>
+    <color name="colorFondo">#FFFFFF</color>
+    <color name="colorFondoDark">#2C1D16</color>
+<color name="black">#000000</color>
+<color name="gray">#808080</color>
+<color name="light_gray">#D3D3D3</color>
 </resources>
