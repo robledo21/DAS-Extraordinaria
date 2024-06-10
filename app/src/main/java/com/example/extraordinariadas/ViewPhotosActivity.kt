@@ -94,7 +94,7 @@ class ViewPhotosActivity : AppCompatActivity() {
 
     private fun showSettingsDialog() {
         val options = arrayOf("Cambiar idioma", "Cambiar tema")
-        val builder = AlertDialog.Builder(this)
+        val builder = AlertDialog.Builder(this, R.style.Theme_Extraordinariadas_Dialog)
         builder.setTitle("Ajustes")
         builder.setItems(options) { dialog, which ->
             when (which) {
@@ -107,7 +107,7 @@ class ViewPhotosActivity : AppCompatActivity() {
 
     private fun showLanguageDialog() {
         val languages = arrayOf("Español", "Inglés")
-        val builder = AlertDialog.Builder(this)
+        val builder = AlertDialog.Builder(this, R.style.Theme_Extraordinariadas_Dialog)
         builder.setTitle("Seleccionar idioma")
         builder.setItems(languages) { dialog, which ->
             // Lógica para cambiar idioma
@@ -117,7 +117,7 @@ class ViewPhotosActivity : AppCompatActivity() {
 
     private fun showThemeDialog() {
         val themes = arrayOf("Claro", "Oscuro")
-        val builder = AlertDialog.Builder(this)
+        val builder = AlertDialog.Builder(this, R.style.Theme_Extraordinariadas_Dialog)
         builder.setTitle("Seleccionar tema")
         builder.setItems(themes) { dialog, which ->
             when (which) {
@@ -130,7 +130,7 @@ class ViewPhotosActivity : AppCompatActivity() {
     private fun fetchPhotos() {
         GlobalScope.launch(Dispatchers.IO) {
             try {
-                val url = URL("http://34.38.73.38/get_images2.php") // Cambia esto a tu URL de PHP
+                val url = URL("http://34.22.222.75/get_images2.php") // Cambia esto a tu URL de PHP
                 val connection = url.openConnection() as HttpURLConnection
                 connection.requestMethod = "GET"
 
