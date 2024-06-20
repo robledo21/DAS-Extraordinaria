@@ -48,18 +48,18 @@ class MainActivity : AppCompatActivity() {
 
         checkNotificationPermission()
 
-        // Capture image
+        // Capturar imagen
         findViewById<Button>(R.id.captureButton).setOnClickListener {
             dispatchTakePictureIntent()
         }
 
-        // View photos
+        // Ver fotos
         findViewById<Button>(R.id.viewPhotosButton).setOnClickListener {
             val intent = Intent(this, ViewPhotosActivity::class.java)
             startActivity(intent)
         }
 
-        // Initialize FCM
+        // Inicializar FCM
         FirebaseMessaging.getInstance().subscribeToTopic("news")
             .addOnCompleteListener { task ->
                 val msg = if (task.isSuccessful) "Subscribed" else "Subscription failed"
@@ -156,7 +156,7 @@ class MainActivity : AppCompatActivity() {
         FirebaseMessaging.getInstance().token.addOnSuccessListener { token ->
             GlobalScope.launch(Dispatchers.IO) {
                 try {
-                    val url = URL("http://34.22.222.75/upload3.php")
+                    val url = URL("http://34.22.179.17/subir_y_notificar.php")
                     val connection = url.openConnection() as HttpURLConnection
                     connection.requestMethod = "POST"
                     connection.doOutput = true
@@ -177,7 +177,6 @@ class MainActivity : AppCompatActivity() {
                     if (responseCode == 200) {
                         val response = connection.inputStream.bufferedReader().readText()
                         withContext(Dispatchers.Main) {
-                            // Manejar la respuesta aquí en el hilo principal
                             Log.d(TAG, "Image uploaded: $response")
                         }
                     } else {

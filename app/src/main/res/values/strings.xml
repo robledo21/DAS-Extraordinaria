@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">ExtraordinariaDAS</string>
+    <string name="app_name">Extraordinariadas</string>
+    <string name="settings">Ajustes</string>
+    <string name="change_language">Cambiar idioma</string>
+    <string name="change_theme">Cambiar tema</string>
+    <string name="select_language">Seleccionar idioma</string>
+    <string name="spanish">Español</string>
+    <string name="english">Inglés</string>
+    <string name="select_theme">Seleccionar tema</string>
+    <string name="light_theme">Claro</string>
+    <string name="dark_theme">Oscuro</string>
+    <string name="logout">Cerrar sesión</string>
 </resources>

@@ -34,7 +34,7 @@ class PhotoWidgetProvider : AppWidgetProvider() {
     private fun fetchPhotos(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
         GlobalScope.launch(Dispatchers.IO) {
             try {
-                val url = URL("http://34.22.222.75/get_images2.php") // Cambia esto a tu URL de PHP
+                val url = URL("http://34.22.179.17/get_photos.php")
                 val connection = url.openConnection() as HttpURLConnection
                 connection.requestMethod = "GET"
 
@@ -48,7 +48,7 @@ class PhotoWidgetProvider : AppWidgetProvider() {
                 }
                 bufferedReader.close()
 
-                // Parse the JSON response
+
                 val jsonArray = JSONArray(response.toString())
                 for (i in 0 until jsonArray.length()) {
                     val imageUrl = jsonArray.getString(i)
@@ -76,7 +76,7 @@ class PhotoWidgetProvider : AppWidgetProvider() {
         for (appWidgetId in appWidgetIds) {
             val views = RemoteViews(context.packageName, R.layout.widget_layout)
 
-            // Display photo using Glide
+            // Mostrar foto usando Glide
             val appWidgetTarget = AppWidgetTarget(context, R.id.imageView, views, appWidgetId)
             Glide.with(context.applicationContext)
                 .asBitmap()
@@ -120,7 +120,7 @@ class PhotoWidgetProvider : AppWidgetProvider() {
             currentIndex = if (currentIndex - 1 < 0) photoUrls.size - 1 else currentIndex - 1
         }
 
-        // Update all widgets
+        // Actualizar widgets
         val appWidgetManager = AppWidgetManager.getInstance(context)
         val appWidgetIds = appWidgetManager.getAppWidgetIds(ComponentName(context, PhotoWidgetProvider::class.java))
         updateWidget(context, appWidgetManager, appWidgetIds)
